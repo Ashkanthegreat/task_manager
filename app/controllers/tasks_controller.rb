@@ -2,6 +2,11 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
   end
+
+  def show
+    @task = Task.find(params[:id])
+  end
+  
   def new
   end
 
@@ -14,9 +19,6 @@ class TasksController < ApplicationController
       redirect_to '/tasks'
   end
 
-  def show
-    @task = Task.find(params[:id])
-  end
 
   def edit
     @task = Task.find(params[:id])
